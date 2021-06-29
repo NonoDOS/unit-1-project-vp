@@ -1,0 +1,179 @@
+html {
+    box-sizing: border-box;
+  }
+  /* The Universal Selector */
+  * /* All elements*/
+  *::before, /* All ::before pseudo-elements */
+  *::after { /* All ::after pseudo-elements */
+    /* height & width will now include border & padding by default
+       but can be over-ridden as needed */
+    box-sizing: inherit;
+  }
+  /* resets font size to be 62.5% of the user preference - 
+       in most browser configurations this will be 10px */
+  :root {
+      font-size: 62.5%;
+  }
+  body{
+    display : grid; 
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(23, 53, 23, 0.945);
+    background: url("https://www.wallpaperflare.com/static/302/504/847/video-games-final-fantasy-xiii-forest-screen-shot-wallpaper.jpg");
+    background-attachment: fixed;
+    /* background-size: 1200px 800px;
+     background-position: center;
+     background-repeat: no-repeat; */
+	 /* Use a system font, if none are available use an available sans-sarif   font */
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	margin: 0;
+    /* height: 100vh; */
+    text-align: center;
+    display: flex; 
+    flex-direction: column;
+}
+
+#petImage
+{
+	size: 20px 20px;
+    position:absolute;
+    bottom:0;
+    left:0;
+    z-index:1;
+}
+.hud{
+    display: flex;
+
+}
+
+#labels
+{
+	margin-left: 50px;
+	padding: 2px 0 2px 0px;
+	width: 100px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.labelLife{
+    color: white;
+    
+}
+.labelHappiness{
+    color: white;
+}
+.labelHunger{
+    color: white;
+}
+#meters{
+	padding: 30px 0 40px 0;
+	width: 500px;
+    height: 100px;
+    font-size: 10 rem;
+}
+#meterLife
+{
+	background-color: #14d314; /* green */
+	border: 1px solid #14d314;
+}
+
+#meterHappiness
+{
+	background-color: #ec8804; /* orange */
+	border: 1px solid #ec8804;
+}
+
+#meterHunger
+{
+	background-color: #216ed3; /* blue */
+	border: 1px solid #216ed3;
+
+}
+.buttons{
+    margin-top: 40px;
+    padding: 18px 4px 0 0;
+    height: 40px;
+    width: 50px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 10 rem;
+}
+#btnPlay{
+      background-color: yellow; 
+      color: #F2F2F2; /* near white */
+      padding: 2px;
+      margin: 1px;
+}
+    
+#btnPlay:hover{
+     background-color: #9cdf01;
+}
+    
+#btnPlay:active{
+      background-color: #5c8a08;
+}
+#btnFeed{
+    background-color: #04B4AE; 
+    color: #F2F2F2; /* near white */
+    padding: 2px;
+    margin: 1px;
+}
+    
+#btnFeed:hover{
+    background-color: #01DFD7;
+}
+    
+#btnFeed:active{
+    background-color: #088A85;
+}
+
+.btnClean{
+    background-color: #2e7406; /* limegreen */
+    color: #F2F2F2; /* near white */
+    padding: 2px;
+    margin: 1px;
+}
+  
+.btnClean:hover{
+   background-color: #0b9222;
+}
+  
+.btnClean:active{
+    background-color: #0b9c17;
+}
+#btnIgnore{
+    background-color: #5d07a4; 
+    color: #F2F2F2; /* near white */
+    padding: 2px;
+    margin: 1px;
+}
+    
+#btnIgnore:hover{
+    background-color: #5514bf;
+}
+    
+#btnIgnore:active{
+    background-color: #55118d;
+}
+
+#btnTalkShit{
+    background-color: #d60a58; 
+    color: #F2F2F2; /* near white */
+    padding: 2px;
+    margin: 1px;
+}
+    
+#btnTalkShit:hover{
+    background-color: #a0093c;
+}
+    
+#btnTalkShit:active{
+    background-color: #86091e;
+}
+
+#feedback{
+    margin-top: 67px;
+    padding: 3px 0 4px 0;
+    width: 380px;
+    float: none;
+}
