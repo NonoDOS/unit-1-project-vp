@@ -29,7 +29,7 @@
              dangerHunger =     false,
              
                  //Get meters to change width and border color
-            const messageElement= document.getElementById('message')
+            const messageElement= document.getElementById('message'),
 
              getMeterLife =      document.getElementById('meterLife'),
              getMeterHappiness =     document.getElementById('meterHappy'),

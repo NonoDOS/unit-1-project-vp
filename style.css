@@ -34,9 +34,9 @@ html {
     flex-direction: column;
 }
 
-#petImage
-{
-	size: 100px 100px; 
+#small-image{
+
+	height: 250px;
     /* position:absolute;  */
 }
 .hud{
