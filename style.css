@@ -36,8 +36,8 @@ html {
 
 #petImage
 {
-	size: 20px 20px;
-    position:absolute;
+	size: 200px 100px; 
+    position:absolute; 
     bottom:0;
     left:0;
     z-index:1;
@@ -52,8 +52,10 @@ html {
 	margin-left: 50px;
 	padding: 2px 0 2px 0px;
 	width: 100px;
+    height: 60px;
 	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
+	border-bottom-left-radius: 5px; 
+    font-size: 20rem;
 }
 .labelLife{
     color: white;
@@ -68,38 +70,41 @@ html {
 #meters{
 	padding: 30px 0 40px 0;
 	width: 500px;
-    height: 100px;
-    font-size: 10 rem;
+    height: 20px;
+    font-size: 10rem;
 }
 #meterLife
 {
 	background-color: #14d314; /* green */
 	border: 1px solid #14d314;
+    height: 20px;
 }
 
 #meterHappiness
 {
 	background-color: #ec8804; /* orange */
 	border: 1px solid #ec8804;
+    height: 20px;
 }
 
 #meterHunger
 {
 	background-color: #216ed3; /* blue */
 	border: 1px solid #216ed3;
+    height: 20px;
 
 }
 .buttons{
     margin-top: 40px;
     padding: 18px 4px 0 0;
-    height: 40px;
+    height: 60px;
     width: 50px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    font-size: 10 rem;
+    font-size: 20 rem;
 }
 #btnPlay{
-      background-color: yellow; 
+      background-color: rgb(38, 0, 255); 
       color: #F2F2F2; /* near white */
       padding: 2px;
       margin: 1px;
@@ -113,7 +118,7 @@ html {
       background-color: #5c8a08;
 }
 #btnFeed{
-    background-color: #04B4AE; 
+    background-color: #1bc7bb; 
     color: #F2F2F2; /* near white */
     padding: 2px;
     margin: 1px;
@@ -127,18 +132,18 @@ html {
     background-color: #088A85;
 }
 
-.btnClean{
+#btnClean{
     background-color: #2e7406; /* limegreen */
     color: #F2F2F2; /* near white */
     padding: 2px;
     margin: 1px;
 }
   
-.btnClean:hover{
+#btnClean:hover{
    background-color: #0b9222;
 }
   
-.btnClean:active{
+#btnClean:active{
     background-color: #0b9c17;
 }
 #btnIgnore{
