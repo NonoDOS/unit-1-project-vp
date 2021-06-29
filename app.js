@@ -17,7 +17,7 @@
              intervalHappiness =   2000,
              intervalHunger =   3000,
              
-                 //When happiness/hunger fall below threshold, pet starts losing health
+                 //When happiness/hunger fall below threshold, pet starts losing Life Bar
              threshold =    ctMaxLife * 0.6,
              points =       2,
              widther =      4,
@@ -29,6 +29,8 @@
              dangerHunger =     false,
              
                  //Get meters to change width and border color
+            const messageElement= document.getElementById('message')
+
              getMeterLife =      document.getElementById('meterLife'),
              getMeterHappiness =     document.getElementById('meterHappy'),
              getMeterHunger =     document.getElementById('meterHunger'),

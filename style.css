@@ -36,11 +36,8 @@ html {
 
 #petImage
 {
-	size: 200px 100px; 
-    position:absolute; 
-    bottom:0;
-    left:0;
-    z-index:1;
+	size: 100px 100px; 
+    /* position:absolute;  */
 }
 .hud{
     display: flex;
@@ -49,83 +46,93 @@ html {
 
 #labels
 {
-	margin-left: 50px;
-	padding: 2px 0 2px 0px;
 	width: 100px;
-    height: 60px;
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px; 
-    font-size: 20rem;
+    height: 20px;
+	margin-bottom: 5px; 
 }
 .labelLife{
     color: white;
+    height: 20px;
+    width: 100px;
+    margin-bottom: 5px;
+    font-size: large;
     
 }
 .labelHappiness{
     color: white;
+    height: 20px;
+    width: 100px;
+    margin-bottom: 5px;
+    font-size: large;
 }
 .labelHunger{
     color: white;
+    height: 20px;
+    width: 100px;
+    margin-bottom: 5px;
+    font-size: large;
 }
 #meters{
-	padding: 30px 0 40px 0;
-	width: 500px;
+    margin-right: 10px;
+	width: 300px;
     height: 20px;
     font-size: 10rem;
+    margin-bottom: 5px;
 }
 #meterLife
 {
 	background-color: #14d314; /* green */
-	border: 1px solid #14d314;
     height: 20px;
+    margin-bottom: 5px;
 }
 
 #meterHappiness
 {
 	background-color: #ec8804; /* orange */
-	border: 1px solid #ec8804;
     height: 20px;
+    margin-bottom: 5px;
 }
 
 #meterHunger
 {
 	background-color: #216ed3; /* blue */
-	border: 1px solid #216ed3;
     height: 20px;
+    margin-bottom: 5px;
 
 }
-.buttons{
-    margin-top: 40px;
-    padding: 18px 4px 0 0;
-    height: 60px;
+#buttons{
+   
+    height: 20px;
     width: 50px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    font-size: 20 rem;
+    margin-bottom: 5px;
+    font-size: large;
 }
 #btnPlay{
       background-color: rgb(38, 0, 255); 
       color: #F2F2F2; /* near white */
-      padding: 2px;
-      margin: 1px;
+      border-radius: 5px;
+      height: 20px;
+      margin-bottom: 5px;
 }
     
 #btnPlay:hover{
-     background-color: #9cdf01;
+     background-color: #7785d6;
 }
     
 #btnPlay:active{
-      background-color: #5c8a08;
+      background-color: #165590;
 }
 #btnFeed{
-    background-color: #1bc7bb; 
+    background-color: #0b8a06; 
     color: #F2F2F2; /* near white */
-    padding: 2px;
-    margin: 1px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    
+    height: 20px;
 }
     
 #btnFeed:hover{
-    background-color: #01DFD7;
+    background-color: #0deb50;
 }
     
 #btnFeed:active{
@@ -133,39 +140,43 @@ html {
 }
 
 #btnClean{
-    background-color: #2e7406; /* limegreen */
+    background-color: #f214e3; /* limegreen */
     color: #F2F2F2; /* near white */
-    padding: 2px;
-    margin: 1px;
+    border-radius: 5px;
+    height: 20px;
+    margin-bottom: 5px;
 }
   
 #btnClean:hover{
-   background-color: #0b9222;
+   background-color: #ee0cb5;
 }
   
 #btnClean:active{
-    background-color: #0b9c17;
+    background-color: #e20ebf;
 }
 #btnIgnore{
     background-color: #5d07a4; 
     color: #F2F2F2; /* near white */
-    padding: 2px;
-    margin: 1px;
+    border-radius: 5px;
+    height: 20px;
+    margin-bottom: 5px;
 }
     
 #btnIgnore:hover{
-    background-color: #5514bf;
+    background-color: #9968e8;
 }
     
 #btnIgnore:active{
-    background-color: #55118d;
+    background-color: #7226b1;
 }
 
 #btnTalkShit{
-    background-color: #d60a58; 
+    background-color: #f0186b; 
     color: #F2F2F2; /* near white */
-    padding: 2px;
-    margin: 1px;
+    border-radius: 5px;
+    height: 20px;
+    width: 100px;
+    margin-bottom: 5px;
 }
     
 #btnTalkShit:hover{
@@ -173,7 +184,7 @@ html {
 }
     
 #btnTalkShit:active{
-    background-color: #86091e;
+    background-color: #dd1f3f;
 }
 
 #feedback{
