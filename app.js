@@ -249,17 +249,17 @@
          }
          
         //  function warnHappiness(){
-        //      getEyes.innerHTML = eyesSick;
+        //      getImg.innerHTML = imgSick;
         //      getStyleHappiness.border = bdrStart + clrWarn;
         //  }
          
         //  function warnHunger){
-        //      getEyes.innerHTML = eyesSick;
+        //      getImg.innerHTML = imgSick;
         //      getStyleHunger.border = bdrStart + clrWarn;
         //  }
          
         //  function warnLife(){
-        //      getEyes.innerHTML = eyesSick;
+        //      getImg.innerHTML = imgSick;
         //      getStyleLife.border = bdrStart + clrWarn;
         //  }
          
@@ -272,12 +272,12 @@
          }
          
         //  function okLife(){
-        //      getEyes.innerHTML = eyesOK;
+        //      getImg.innerHTML = ;
         //      getStyleLife.border = bdrStart + clrDfltH;
         //  }
          
         //  function ending(){
-        //      getEyes.innerHTML = eyesDead;
+        //      getImg.innerHTML = ;
         //      getStyleFb.display = 'block';
         //  }
          
