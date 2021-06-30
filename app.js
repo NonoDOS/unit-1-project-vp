@@ -2,21 +2,21 @@
     "use strict";
         
      document.addEventListener('DOMContentLoaded',function(){
-         
-         //Variables
              //Pet's stats are Life, Happiness, and Hunger
-        let  ctMaxLife =        50,
-             ctMaxHappiness =   50,
-             ctMaxHunger =      50,
-             
-             intervalLife =    1000,
+
+             //Variables
+        var  intervalLife =    1000,
              intervalHappiness =   2000,
              intervalHunger =   3000,
+
+             ctMaxLife =        50,
+             ctMaxHappiness =   50,
+             ctMaxHunger =      50,
              
              ctCurLife =       ctMaxLife,
              ctCurHappiness =  ctMaxHappiness,
              ctCurHunger=      ctMaxHunger,
-                 //When conditions are dangerous, affected stat bars will turned red (warning)
+    //When conditions are dangerous, the coresponding stat bars will turn red (warning)
              alive =		    true,
              dangerLife =       false,
              dangerHappiness =  false,
@@ -27,12 +27,12 @@
              const messageElement= document.getElementById('message'),
 
              getMeterLife =      document.getElementById('meterLife'),
-             getMeterHappiness =     document.getElementById('meterHappy'),
-             getMeterHunger =     document.getElementById('meterHunger'),
+             getMeterHappiness = document.getElementById('meterHappiness'),
+             getMeterHunger =    document.getElementById('meterHunger'),
              
-             getStyleLife =    getMeterLife.style,
+             getStyleLife =        getMeterLife.style,
              getStyleHappiness =   getMeterHappiness.style,
-             getStyleHunger =   getMeterHunger.style,
+             getStyleHunger =      getMeterHunger.style,
              bdrStart =		"1px solid ",
 
             //When happiness/hunger fall below threshold, pet starts losing Life Bar
@@ -41,13 +41,13 @@
              widther =      4,
              
                  //Colors for meter borders
-             clrDfltLife =      "#0b420b",  
-             clrDfltHappiness = "#ec8804",  
-             clrDfltHunger =    "#216ed3",  
+             clrDfltLife =      "#0b420b",  //green
+             clrDfltHappiness = "#ec8804",  //orange
+             clrDfltHunger =    "#216ed3",  //blue
                  
-             clrCurLife =      clrDfltLife,
-             clrCurHappiness = clrDfltHappiness,
-             clrCurHunger =    clrDfltHunger,
+             colorCurLife =      clrDfltLife,
+             colorCurHappiness = clrDfltHappiness,
+             c0lorCurHunger =    clrDfltHunger,
              
              clrWarn = " #FF0040", //red
          
@@ -56,7 +56,7 @@
              getBtnFeed     =     document.getElementById('btnFeed'),
              getBtnClean    =     document.getElementById('btnClean'),
              getBtnIgnore   =     document.getElementById('btnIgnore'),
-             getBtnTalkShit =     document.getElementById('btnTalkShit'),
+             getBtnTalkShit =     document.getElementById('btnTalkShit');
              
             //      //Get images to express status
             //  getImgeSadpup.src = "petImg/smallpup.jpeg" 
@@ -64,12 +64,14 @@
             //  
          
                  //Get style for the feedback div
-              getStyleFb = 	document.getElementById('feedback').style;
+            //   getStyleFb = 	document.getElementById('feedback').style;
              
         
          getStyleFb.display = 'none';
          meterWidth();
          
+
+         //setInterval functions for count down
          //At set intervals, Hppiness decreases.
          setInterval(function(){
              if(alive == true){
@@ -133,7 +135,7 @@
              
          if(alive == false)
             {
-                ending();
+                terminate();
             }
              
          },intervalLife);
@@ -146,26 +148,24 @@
                      {
                         ctCurHappiness = ctCurHappiness + points;
                      
-                        if(ctCurLife + points < ctMaxLife)
-                            {
-                                ctCurLife = ctCurLife + points;
-                            }
-                     
-                        meterWidth();
+                     }if(ctCurLife + points < ctMaxLife)
+                    {
+                        ctCurLife = ctCurLife + points;
+                     }meterWidth();
                      
                         //Check conditions and adjust graphics as appropriate.
-                        checkDangerLife();
-                        checkDangerHappiness();
-                        checkDangerHunger();
+                    checkDangerLife();
+                    checkDangerHappiness();
+                    checkDangerHunger();
                      
-                        if(dangerLife == false)
-                        {okLife();}
-                        if(dangerHappiness == false)
-                        {okHappiness();}
-                        if(dangerHunger== false)
-                        {okHunger();}
+                    if(dangerLife == false)
+                    {okLife();}
+                    if(dangerHappiness == false)
+                    {okHappiness();}
+                    if(dangerHunger== false)
+                    {okHunger();}
                     }
-                }
+                
          //Clicking on a "Feed" button will restore life and hunger level to your pet.
          getBtnFeed.addEventListener("click",function(){
              if(alive == true){
