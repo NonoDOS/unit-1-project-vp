@@ -5,31 +5,26 @@
          
          //Variables
              //Pet's stats are Life, Happiness, and Hunger
-        let  ctMaxLife =        30,
-             ctMaxHappiness =   30,
-             ctMaxHunger =      30,
-             
-             ctCurLife =       ctMaxLife,
-             ctCurHappiness =  ctMaxHappiness,
-             ctCurHunger=      ctMaxHunger,
+        let  ctMaxLife =        50,
+             ctMaxHappiness =   50,
+             ctMaxHunger =      50,
              
              intervalLife =    1000,
              intervalHappiness =   2000,
              intervalHunger =   3000,
              
-                 //When happiness/hunger fall below threshold, pet starts losing Life Bar
-             threshold =    ctMaxLife * 0.6,
-             points =       2,
-             widther =      4,
-             
-                 //When conditions are dangerous, affected stat bars will be hilited in red
-             alive =		true,
-             dangerLife =      false,
-             dangerHappiness =     false,
+             ctCurLife =       ctMaxLife,
+             ctCurHappiness =  ctMaxHappiness,
+             ctCurHunger=      ctMaxHunger,
+                 //When conditions are dangerous, affected stat bars will turned red (warning)
+             alive =		    true,
+             dangerLife =       false,
+             dangerHappiness =  false,
              dangerHunger =     false,
              
+             //--------------------------------------catchedElements--------------------------------------
                  //Get meters to change width and border color
-            const messageElement= document.getElementById('message'),
+             const messageElement= document.getElementById('message'),
 
              getMeterLife =      document.getElementById('meterLife'),
              getMeterHappiness =     document.getElementById('meterHappy'),
@@ -39,11 +34,16 @@
              getStyleHappiness =   getMeterHappiness.style,
              getStyleHunger =   getMeterHunger.style,
              bdrStart =		"1px solid ",
+
+            //When happiness/hunger fall below threshold, pet starts losing Life Bar
+             threshold =    ctMaxLife * 0.6,
+             points =       2,
+             widther =      4,
              
                  //Colors for meter borders
-             clrDfltLife =      "#0b420b",  //green
-             clrDfltHappiness = "#ec8804",  //orange
-             clrDfltHunger =    "#216ed3",  //blue
+             clrDfltLife =      "#0b420b",  
+             clrDfltHappiness = "#ec8804",  
+             clrDfltHunger =    "#216ed3",  
                  
              clrCurLife =      clrDfltLife,
              clrCurHappiness = clrDfltHappiness,
@@ -59,7 +59,8 @@
              getBtnTalkShit =     document.getElementById('btnTalkShit'),
              
             //      //Get images to express status
-            //  getImgeSadpup =		document.getElementById(''),
+            //  getImgeSadpup.src = "petImg/smallpup.jpeg" 
+            //document.getElementById(''),
             //  
          
                  //Get style for the feedback div
@@ -86,9 +87,9 @@
          },intervalHunger);
          
          /*
-         What happens in this nest:
-         Health starts to drop if Happiness or Hunger are too low.
-         Meter graphics are adjusted as applicable.
+         In this nest:
+         Life Bar will drop if Happiness or Hunger are too low.
+         If the Life bar is too low, the pet will die eventually
          If the pet is dead, then the ending events trigger.
          */
          setInterval(function(){
@@ -249,6 +250,7 @@
                 }
             }
             getBtnTalkShit.addEventListener("click",function(){
+                getBtnTalkShit.src = "petImg/sadpup.jpeg"
                 if(alive == true){
                     if(ctCurHappiness - points <= ctMaxHappiness)
                         {
@@ -360,10 +362,10 @@
         //      getStyleLife.border = bdrStart + clrDfltH;
         //  }
          
-        //  function ending(){
-        //      getImg.innerHTML = ;
-        //      getStyleFb.display = 'block';
-        //  }
+         function ending(){
+            //  getImg.innerHTML = ;
+            //  getStyleFb.display = 'block';
+         }
          
         // });
         
@@ -371,4 +373,4 @@
                 })
             })
         })
-    })
+    })()
