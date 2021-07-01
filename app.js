@@ -1,46 +1,49 @@
-(function() {
-    "use strict";
-        
-     document.addEventListener('DOMContentLoaded',function(){
-             //Pet's stats are Life, Happiness, and Hunger
+ //Pet's stats are Life, Happiness, and Hunger
 
-             //Variables
-        var  intervalLife =    1000,
-             intervalHappiness =   2000,
-             intervalHunger =   3000,
+    
+//--------------------------------------constants-------------------------------
 
-             ctMaxLife =        50,
-             ctMaxHappiness =   50,
-             ctMaxHunger =      50,
+//--------------------------------------Variables--------------------------------------
+    var  intervalLife =      1000,
+         intervalHappiness = 2000,
+         intervalHunger =    3000,
+
+         ctMaxLife =        50,
+         ctMaxHappiness =   50,
+         ctMaxHunger =      50,
              
-             ctCurLife =       ctMaxLife,
-             ctCurHappiness =  ctMaxHappiness,
-             ctCurHunger=      ctMaxHunger,
-    //When conditions are dangerous, the coresponding stat bars will turn red (warning)
-             alive =		    true,
-             dangerLife =       false,
-             dangerHappiness =  false,
-             dangerHunger =     false,
+         ctCurLife =       ctMaxLife,
+         ctCurHappiness =  ctMaxHappiness,
+         ctCurHunger=      ctMaxHunger,
+
+
+         
+//When conditions are dangerous, the coresponding stat bars will turn red (warning)
+    alive =		        true,
+    dangerLife =       false,
+    dangerHappiness =  false,
+    dangerHunger =     false,
              
-             //--------------------------------------catchedElements--------------------------------------
+//--------------------------------------catchedElements--------------------------------------
                  //Get meters to change width and border color
-             const messageElement= document.getElementById('message'),
+     const messageElement= document.getElementById('message'),
 
-             getMeterLife =      document.getElementById('meterLife'),
-             getMeterHappiness = document.getElementById('meterHappiness'),
-             getMeterHunger =    document.getElementById('meterHunger'),
+    getPetImg = document.getElementById('small-image'),
+    getMeterLife =      document.getElementById('meterLife'),
+    getMeterHappiness = document.getElementById('meterHappiness'),
+     getMeterHunger =    document.getElementById('meterHunger'),
              
              getStyleLife =        getMeterLife.style,
              getStyleHappiness =   getMeterHappiness.style,
              getStyleHunger =      getMeterHunger.style,
-             bdrStart =		"1px solid ",
+             
 
-            //When happiness/hunger fall below threshold, pet starts losing Life Bar
+//When happiness/hunger fall below threshold, pet starts losing Life Bar
              threshold =    ctMaxLife * 0.6,
              points =       2,
              widther =      4,
              
-                 //Colors for meter borders
+ //Colors for meter borders
              clrDfltLife =      "#0b420b",  //green
              clrDfltHappiness = "#ec8804",  //orange
              clrDfltHunger =    "#216ed3",  //blue
@@ -54,9 +57,9 @@
                  //Get buttons for click events
              getBtnPlay     =     document.getElementById('btnPlay'),
              getBtnFeed     =     document.getElementById('btnFeed'),
-             getBtnClean    =     document.getElementById('btnClean'),
-             getBtnIgnore   =     document.getElementById('btnIgnore'),
-             getBtnTalkShit =     document.getElementById('btnTalkShit');
+             getBtnClean    =     document.getElementById('btnClean')
+            //  getBtnIgnore   =     document.getElementById('btnIgnore'),
+            //  getBtnTalkShit =     document.getElementById('btnTalkShit');
              
             //      //Get images to express status
             //  getImgeSadpup.src = "petImg/smallpup.jpeg" 
@@ -67,11 +70,11 @@
             //   getStyleFb = 	document.getElementById('feedback').style;
              
         
-         getStyleFb.display = 'none';
-         meterWidth();
+        //  getStyleFb.display = 'none';
+        //  meterWidth();
          
 
-         //setInterval functions for count down
+ //--------------setInterval functions for count down-------------
          //At set intervals, Hppiness decreases.
          setInterval(function(){
              if(alive == true){
@@ -88,12 +91,12 @@
              }
          },intervalHunger);
          
-         /*
-         In this nest:
-         Life Bar will drop if Happiness or Hunger are too low.
-         If the Life bar is too low, the pet will die eventually
-         If the pet is dead, then the ending events trigger.
-         */
+/*
+In this nest:
+Life Bar will drop if Happiness or Hunger are too low.
+If the Life bar is too low, the pet will die eventually
+If the pet is dead, then the ending events trigger.
+*/
          setInterval(function(){
              
              meterWidth();
@@ -140,7 +143,7 @@
              
          },intervalLife);
     
-    
+ //-----------------------button eventlisteners------------------------------------   
          //Clicking on a "Play" button will restore life and happiness level to your pet.
          getBtnPlay.addEventListener("click",function(){
              if(alive == true){
@@ -223,60 +226,60 @@
          });
          //Clicking on the "Ignore" and "Talk Shit"button will reduce life and happiness level to your pet.
 
-         getBtnIgnore.addEventListener("click",function(){
-            if(alive == true){
-                if(ctCurHappiness - points <= ctMaxHappiness)
-                    {
-                       ctCurHappiness = ctCurHappiness - points;
+        //  getBtnIgnore.addEventListener("click",function(){
+        //     if(alive == true){
+        //         if(ctCurHappiness - points <= ctMaxHappiness)
+        //             {
+        //                ctCurHappiness = ctCurHappiness - points;
                     
-                       if(ctCurLife - points < ctMaxLife)
-                           {
-                               ctCurLife = ctCurLife - points;
-                           }
+        //                if(ctCurLife - points < ctMaxLife)
+        //                    {
+        //                        ctCurLife = ctCurLife - points;
+        //                    }
                     
-                       meterWidth();
+        //                meterWidth();
                     
-                       //Check conditions and adjust graphics as appropriate.
-                       checkDangerLife();
-                       checkDangerHappiness();
-                       checkDangerHunger();
+        //                //Check conditions and adjust graphics as appropriate.
+        //                checkDangerLife();
+        //                checkDangerHappiness();
+        //                checkDangerHunger();
                     
-                       if(dangerLife == false)
-                       {okLife();}
-                       if(dangerHappiness == false)
-                       {okHappiness();}
-                       if(dangerHunger== false)
-                       {okHunger();}
-                }
-            }
-            getBtnTalkShit.addEventListener("click",function(){
-                getBtnTalkShit.src = "petImg/sadpup.jpeg"
-                if(alive == true){
-                    if(ctCurHappiness - points <= ctMaxHappiness)
-                        {
-                           ctCurHappiness = ctCurHappiness - points;
+        //                if(dangerLife == false)
+        //                {okLife();}
+        //                if(dangerHappiness == false)
+        //                {okHappiness();}
+        //                if(dangerHunger== false)
+        //                {okHunger();}
+        //         }
+        //     }
+        //     getBtnTalkShit.addEventListener("click",function(){
+        //         getPetImg.src = "petImg/sayingHi.jpeg"
+        //         if(alive == true){
+        //             if(ctCurHappiness - points <= ctMaxHappiness)
+        //                 {
+        //                    ctCurHappiness = ctCurHappiness - points;
                         
-                           if(ctCurLife - points < ctMaxLife)
-                               {
-                                   ctCurLife = ctCurLife - points;
-                               }
+        //                    if(ctCurLife - points < ctMaxLife)
+        //                        {
+        //                            ctCurLife = ctCurLife - points;
+        //                        }
                         
-                           meterWidth();
+        //                    meterWidth();
                         
-                           //Check conditions and adjust graphics as appropriate.
-                           checkDangerLife();
-                           checkDangerHappiness();
-                           checkDangerHunger();
+        //                    //Check conditions and adjust graphics as appropriate.
+        //                    checkDangerLife();
+        //                    checkDangerHappiness();
+        //                    checkDangerHunger();
                         
-                           if(dangerLife == false)
-                           {okLife();}
-                           if(dangerHappiness == false)
-                           {okHappiness();}
-                           if(dangerHunger== false)
-                           {okHunger();}
-                    }
-                }
-        });
+        //                    if(dangerLife == false)
+        //                    {okLife();}
+        //                    if(dangerHappiness == false)
+        //                    {okHappiness();}
+        //                    if(dangerHunger== false)
+        //                    {okHunger();}
+        //             }
+        //         }
+        // });
         
          
          
