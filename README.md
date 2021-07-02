@@ -22,6 +22,9 @@ I personally choose the virtual pet with the intention of testing out the animat
 
 <img width="1074" alt="Screen Shot 2021-07-02 at 9 32 11 AM" src="https://user-images.githubusercontent.com/44306655/124304570-ba866500-db18-11eb-8e33-8a1b4e825169.png">
 
+![Uploading Screen Shot 2021-07-02 at 9.36.43 AM.png…]()
+
+
 
 ## Introduction
 
@@ -35,7 +38,7 @@ A Pet Stimulation game with basic functions such as feeding cleaning and playing
 
 ## Design/Features
 	-Amime forest theme
-	- scenery
+	- Pet Images reacting the Action buttons
 	-include night mode with galaxy view
 	
 ## Used Libraries:
