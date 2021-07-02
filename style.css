@@ -46,7 +46,8 @@ header{
      display: flex;
      flex-direction: column;
      align-items: center;
-     background: url("http://www.wallpapers-full-hd.com/backgrounds/galaxy-gory-night-sky.jpg");
+     background: url("https://www.wallpaperflare.com/static/302/504/847/video-games-final-fantasy-xiii-forest-screen-shot-wallpaper.jpg");
+     background-attachment: fixed; 
      background-position: center;
      background-repeat: no-repeat;
      background-size: 1500px 900px;
@@ -68,7 +69,7 @@ body.dark{
 }
 body.dark > div > #left-column{
     
-    background: url("https://th.bing.com/th/id/OIP.HceB5r8ErO7hifi9mHfQDgHaEo?pid=ImgDet&rs=1");
+    background: url("http://www.wallpapers-full-hd.com/backgrounds/galaxy-gory-night-sky.jpg");
     background-repeat: no-repeat;
     background-image: fixed;
     background-position: center;
