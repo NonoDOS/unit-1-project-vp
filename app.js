@@ -31,7 +31,7 @@
     let dangerLife = false
     let dangerHappiness = false
     let dangerHunger = false
-//--------------------------------------catchedElements--------------------------------------/
+//--------------------------------------catchedElements--------------------------------------//
                  //Get meters to change width and border color
      const messageElement= document.getElementById('message'),
            sound = document.getElementById('sound'),
@@ -46,8 +46,9 @@
      getStyleHappiness =   getMeterHappiness.style,
      getStyleHunger =      getMeterHunger.style,
              
-
+//----------------------------------------Threshold------------------------------------------------//
 //When happiness/hunger fall below threshold, pet starts losing Life Bar
+
              threshold =    ctMaxLife * 0.6,
              points =       4,
              widther =      4,
@@ -71,7 +72,8 @@
             getBtnIgnore   =     document.getElementById('btnIgnore'),
             getBtnTalkShit =     document.getElementById('btnTalkShit');
 
- //--------------setInterval functions for count down---------------------------/
+ //-------------------------------setInterval functions for count down----------------------------------------/
+
          //At set intervals, Hppiness decreases.
          setInterval(function(){
              if(alive == true){
@@ -92,7 +94,7 @@
 In this nest:
 Life Bar will drop if Happiness or Hunger are too low.
 If the Life bar is too low, the pet will die eventually
-If the pet is dead, then the ending events trigger.
+If the pet is dead/runaway, then the ending events trigger.
 */
          setInterval(function(){
              
@@ -143,7 +145,7 @@ If the pet is dead, then the ending events trigger.
  //-----------------------button eventlisteners------------------------------------/  
  
  //sound file //toggle audio
-        sound.addEventListener("click",function(){
+    sound.addEventListener("click",function(){
             if(isSoundOn){
             isSoundOn =false
             audioPlayer.pause()
@@ -152,12 +154,13 @@ If the pet is dead, then the ending events trigger.
                 audioPlayer.play()
             }
         })
-  //light/dark Mode
-  lightDarkBtn.addEventListener("click", colorScheme.change)
 
-  
+  //light/dark Mode ( DAY/NIGHT)
+   lightDarkBtn.addEventListener("click", colorScheme.change)
+
+ //Play Button
  //Clicking on a "Play" button will restore life and happiness level to your pet.
-         getBtnPlay.addEventListener("click",function(){
+    getBtnPlay.addEventListener("click",function(){
              getPetImg.src = "petImg/playingPup.png"
              if(alive == true){
                  if(ctCurHappiness + points <= ctMaxHappiness)
@@ -182,8 +185,9 @@ If the pet is dead, then the ending events trigger.
                     {okHunger();}
                     }
          })
-                  
-         //Clicking on a "Feed" button will restore life and hunger level to your pet.
+     
+    //CFeed
+    //Clicking on a "Feed" button will restore life and hunger level to your pet.
          getBtnFeed.addEventListener("click",function(){
             getPetImg.src = "petImg/DogFeed.jpg"
              if(alive == true){
@@ -208,9 +212,11 @@ If the pet is dead, then the ending events trigger.
                         if(dangerHunger == false)
                             {okHunger();}
                  }
-             })
-             //Clicking on a "Feed" button will restore life and hunger level to your pet.
-             getBtnClean.addEventListener("click",function(){
+             });
+
+    //Clean Button
+    //Clicking on a "Clean" button will restore life and happiness level to your pet.
+        getBtnClean.addEventListener("click",function(){
                 getPetImg.src = "petImg/cleaningPup.jpeg"
                 if(alive == true){
                     if(ctCurHappiness + points <= ctMaxHappiness)
@@ -238,7 +244,10 @@ If the pet is dead, then the ending events trigger.
                     }
                 }
          });
-         //Clicking on the "Ignore" and "Displine"button will reduce life and happiness level to your pet.
+
+
+    //Ignore and Displine button 
+    //Clicking on the "Ignore" and "Displine" button will reduce life and happiness level to your pet.
 
          getBtnIgnore.addEventListener("click",function(){
             getPetImg.src = "petImg/sadpup1.jpeg"
@@ -296,7 +305,7 @@ If the pet is dead, then the ending events trigger.
                     }
                 }
         });
-         
+ //----------------------------------------------Functions------------------------------------------------/          
          //Functions
          init()
 
@@ -360,17 +369,20 @@ If the pet is dead, then the ending events trigger.
          }
          
         function warnHappiness(){
-        
+             messageElement.innerHTML = " Your Pet is Sad, he need more love <3 "
+             messageElement.style.color = "white"
              getStyleHappiness.border = bdrStart + clrWarn;
          }
          
         function warnHunger(){
-        
+             messageElement.innerHTML = " Your Pet is HUNGRY"
+             messageElement.style.color = "white"
              getStyleHunger.border = bdrStart + clrWarn;
         }
          
          function warnLife(){
-       
+            messageElement.innerHTML = " Ding Ding Ding!! Your Pet is in Danger!!!!"
+            messageElement.style.color = "white"
              getStyleLife.border = bdrStart + clrWarn;
           }
          
@@ -394,9 +406,9 @@ If the pet is dead, then the ending events trigger.
             setTimeout(function(){
                 audioPlayer.pause()
             }, 5000)
-            messageElement.innerHTML = "You lose!!!"
+            messageElement.innerHTML = "You lose!!! Your Pet Run Away.... [^_^]"
             messageElement.style.color = "white"
          }//end of the game
-         
+         //Sorry!!!!!!
   
      
