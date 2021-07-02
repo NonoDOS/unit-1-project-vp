@@ -18,7 +18,6 @@ I personally choose the virtual pet with the intention of testing out the animat
 ![IMG_4861 2](https://user-images.githubusercontent.com/44306655/124306437-41d4d800-db1b-11eb-8be2-6a7bf61a2849.jpg)
 ![IMG_4869](https://user-images.githubusercontent.com/44306655/124306310-1356fd00-db1b-11eb-8ae9-a45fd43adb33.jpg)
 ![IMG_4868 3](https://user-images.githubusercontent.com/44306655/124306724-a5f79c00-db1b-11eb-8199-6d744370ac9b.jpg)
-
 ![IMG_4870](https://user-images.githubusercontent.com/44306655/124306369-279afa00-db1b-11eb-9762-f60bce88dfb4.jpg)
 ![IMG_4874 3](https://user-images.githubusercontent.com/44306655/124306514-587b2f00-db1b-11eb-9f40-5e7634779ff5.jpg)
 
@@ -71,6 +70,7 @@ A Pet Stimulation game with basic functions such as feeding cleaning and playing
  - [disciplinedogimg](https://www.fotosearch.com/illustration/bad-dog.html)
  - [galaxy,nightimg](http://www.wallpapers-full-hd.com/backgrounds/galaxy-gory-night-sky.jpg)
  - [other dog pics](https://images.clipartof.com/)
+ - [background_img](https://www.wallpaperflare.com/static/302/504/847/video-games-final-fantasy-xiii-forest-screen-shot-wallpaper.jpg)
 
 ## Authors
 -[@NonoDOS}(https://github.com/NonoDOS)
