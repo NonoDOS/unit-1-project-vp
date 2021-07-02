@@ -1,17 +1,22 @@
- 
- //Pet's stats are Life, Happiness, and Hunger
-
-    
+ //Pet's stats are Life, Happiness, and Hunger    
 //--------------------------------------constants-------------------------------
-
+ const colorScheme = {
+    dark: "",
+    change: function () {
+      console.log(colorScheme.dark)
+      colorScheme.dark = colorScheme.dark ? "" : "dark"
+      document.querySelector("body").setAttribute("class", colorScheme.dark)
+      console.log(colorScheme.dark)
+    }
+  }
 //--------------------------------------Variables--------------------------------------
     let  intervalLife =      1000,
          intervalHappiness = 3000,
          intervalHunger =    2000,
 
-         ctMaxLife =        50,
-         ctMaxHappiness =   50,
-         ctMaxHunger =      50,
+         ctMaxLife =        100,
+         ctMaxHappiness =   100,
+         ctMaxHunger =      100,
              
          ctCurLife =       ctMaxLife,
          ctCurHappiness =  ctMaxHappiness,
@@ -30,7 +35,7 @@
      const messageElement= document.getElementById('message'),
            sound = document.getElementById('sound'),
            audioPlayer = new Audio(),
-
+           lightDarkBtn = document.querySelector("#light-dark-button"),
      getPetImg = document.getElementById('small-image'),
      getMeterLife =      document.getElementById('meterLife'),
      getMeterHappiness = document.getElementById('meterHappiness'),
@@ -43,7 +48,7 @@
 
 //When happiness/hunger fall below threshold, pet starts losing Life Bar
              threshold =    ctMaxLife * 0.6,
-             points =       2,
+             points =       4,
              widther =      4,
              
  //Colors for meter borders
@@ -54,7 +59,7 @@
                  
              colorCurLife =      clrDfltLife,
              colorCurHappiness = clrDfltHappiness,
-             c0lorCurHunger =    clrDfltHunger,
+             colorCurHunger =    clrDfltHunger,
              
              clrWarn = " #FF0040", //red
         
@@ -160,8 +165,11 @@ If the pet is dead, then the ending events trigger.
                 audioPlayer.play()
             }
         })
+  //light/dark Mode
+  lightDarkBtn.addEventListener("click", colorScheme.change)
+
   
-         //Clicking on a "Play" button will restore life and happiness level to your pet.
+ //Clicking on a "Play" button will restore life and happiness level to your pet.
          getBtnPlay.addEventListener("click",function(){
              if(alive == true){
                  if(ctCurHappiness + points <= ctMaxHappiness)
