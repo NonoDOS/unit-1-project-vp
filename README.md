@@ -20,6 +20,8 @@ I personally choose the virtual pet with the intention of testing out the animat
 
 <img width="633" alt="Screen Shot 2021-07-01 at 7 41 23 AM" src="https://user-images.githubusercontent.com/44306655/124143792-44163400-da40-11eb-86ec-1be9b62c5c57.png">
 
+<img width="1074" alt="Screen Shot 2021-07-02 at 9 32 11 AM" src="https://user-images.githubusercontent.com/44306655/124304570-ba866500-db18-11eb-8e33-8a1b4e825169.png">
+
 
 ## Introduction
 
@@ -34,7 +36,7 @@ A Pet Stimulation game with basic functions such as feeding cleaning and playing
 ## Design/Features
 	-Amime forest theme
 	- scenery
-	-include night mode
+	-include night mode with galaxy view
 	
 ## Used Libraries:
     •   HTML5
@@ -72,6 +74,7 @@ A Pet Stimulation game with basic functions such as feeding cleaning and playing
 -[@NonoDOS}(https://github.com/NonoDOS)
 
 ## Game Play
+### Story
 
 Title : Virtual Pet By Nono D
 
@@ -89,7 +92,7 @@ Msg: which one would you like?
 
 5)Are you ready to take him home?What would you like your Pet name to be?Enter your Pet name?
 
-6) Game Play
+6) Game Pl
 
 1. Make sure your pet’s Life Bar is not below warning level
 2. Feeding him and Playing with him would be a great help
