@@ -6,14 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"href="style.css" />
     <script defer src="app.js"></script>
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+    crossorigin="anonymous"
+>
 
     <title>Virtual Pet</title>
 </head>
 <body>
     <header>
-        <button id="BtnGameRule">Game Rule</button>
-        <button id="BtnContent">Content</button>
-        <button id="BtnGamePlay">Game Play</button>
+        <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Game Play</a>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Rule</button>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Game Play and Rule</button>
+          </p>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <div class="card card-body">
+                  1)Make sure your pet’s Life Bar is not below warning level<br>
+                  2)Feeding him and Playing with him would be a great help<br>
+                  3)He has two simple needs : to keep Happiness and Hunger level up<br>
+                  4)Talking shit/Displaining to your pet when you are busy and frustrated and ignoring him will lead to his sad mood and eventually it will affect his heath and hence the Life Bar.<br>
+                  5)Ready for your Virtual Pet!<br>
+                    Bring it on!
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample2">
+                <div class="card card-body">
+                  Simple Rule ....Don't Let him die..Have Fun!!
+                </div>
+              </div>
+            </div>
+          </div>
+       
     </header>
 
  <div class="" id="body-container">
@@ -52,6 +83,10 @@
         <div id="btnTalkShit">Discipline</div>
     </div>
  </div>
-
+ <script 
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		crossorigin="anonymous"
+	></script>
 </body>
 </html>

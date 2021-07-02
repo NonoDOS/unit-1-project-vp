@@ -4,7 +4,7 @@
 ## Project Overview
 
 This project is the first project for General Assembly-SEI(software engineering immersive) remote course which starts on 6/7/2021. The project is to choose game of your choice and build it in like a week using external liberies and framework .
-I personally choose the virtual pet with the intention of testing out the animation with p5.js and other tools in the basic javascript knowledge.
+I personally choose the virtual pet with the intention of testing out the animation with javascript, and p5.js and other tools in the basic javascript knowledge.
 
 
 ## Getting Started
@@ -19,6 +19,7 @@ I personally choose the virtual pet with the intention of testing out the animat
 <img width="581" alt="shthvp" src="https://user-images.githubusercontent.com/44306655/124156608-b0973000-da4c-11eb-95a4-2cf99c5b64dd.png">
 
 <img width="633" alt="Screen Shot 2021-07-01 at 7 41 23 AM" src="https://user-images.githubusercontent.com/44306655/124143792-44163400-da40-11eb-86ec-1be9b62c5c57.png">
+
 
 
 ## Introduction
@@ -49,7 +50,7 @@ A Pet Stimulation game with basic functions such as feeding cleaning and playing
 	2. Enhance with graphic
 	3. 2D and 3D animation
 	4. Other graphic background using three.js and p5.js
-	5. Adding more functions like talking a walk, going swimming,
+	5. Adding more functions like taking a walk, going swimming,
 
 ## References 
 	1) lectures Notes and recordings from SEI

@@ -29,10 +29,13 @@ html {
     height: 100vh;
     text-align: center;
     display: flex; 
-    flex-direction: column;
-    
-    
+    flex-direction: column;    
 }
+h1{
+    font-size: large;
+    color: Black ;
+}
+
 header{
     height: 8vh;
     border-bottom: black 5px solid;
@@ -231,31 +234,4 @@ body.dark > div > #left-column{
     background-color: #dd1f3f;
 }
 
-#BtnGameRule{
-    background-color:cornflowerblue;
-    text-align: center;
-    border-radius: 10px;
-    font-size: xlarge;
-    height: 50px;
-    width: 70px;
-    margin-bottom: 5px;
-}
-#BtnContent{
-    background-color:cornflowerblue;
-    text-align: center;
-    border-radius: 10px;
-    font-size: xlarge;
-    height: 50px;
-    width: 70px;
-    margin-bottom: 5px;
-}
-#BtnGamePlay{
-    background-color:cornflowerblue;
-    text-align: center;
-    border-radius: 10px;
-    font-size: xlarge;
-    height: 50px;
-    width: 70px;
-    margin-bottom: 5px;
-}
 
