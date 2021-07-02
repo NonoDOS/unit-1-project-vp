@@ -1,4 +1,4 @@
- //Pet's stats are Life, Happiness, and Hunger    
+     
 //--------------------------------------constants-------------------------------
  const colorScheme = {
     dark: "",
@@ -10,6 +10,7 @@
     }
   }
 //--------------------------------------Variables--------------------------------------
+//Pet's stats are Life, Happiness, and Hunger
     let  intervalLife =      1000,
          intervalHappiness = 3000,
          intervalHunger =    2000,
@@ -26,10 +27,10 @@
          
 //When conditions are dangerous, the coresponding stat bars will turn red (warning)
        
-   let alive = true
-   let dangerLife = false
-   let dangerHappiness = false
-   let dangerHunger = false
+    let alive = true
+    let dangerLife = false
+    let dangerHappiness = false
+    let dangerHunger = false
 //--------------------------------------catchedElements--------------------------------------/
                  //Get meters to change width and border color
      const messageElement= document.getElementById('message'),
@@ -41,9 +42,9 @@
      getMeterHappiness = document.getElementById('meterHappiness'),
      getMeterHunger =    document.getElementById('meterHunger'),
              
-    getStyleLife =        getMeterLife.style,
-    getStyleHappiness =   getMeterHappiness.style,
-    getStyleHunger =      getMeterHunger.style,
+     getStyleLife =        getMeterLife.style,
+     getStyleHappiness =   getMeterHappiness.style,
+     getStyleHunger =      getMeterHunger.style,
              
 
 //When happiness/hunger fall below threshold, pet starts losing Life Bar
@@ -66,25 +67,11 @@
                  //Get buttons for click events
             getBtnPlay     =     document.getElementById('btnPlay'),
             getBtnFeed     =     document.getElementById('btnFeed'),
-            getBtnClean    =     document.getElementById('btnClean')
-            //  getBtnIgnore   =     document.getElementById('btnIgnore'),
-            //  getBtnTalkShit =     document.getElementById('btnTalkShit');
-             
-            //      //Get images to express status
-            //  getImgeSadpup.src = "petImg/smallpup.jpeg" 
-            //document.getElementById(''),
-            //  
-         
-                 //Get style for the feedback div
-            //   getStyleFb = 	document.getElementById('feedback').style;
-             
-        
-        //  getStyleFb.display = 'none';
-        //  meterWidth();
-    
-        
+            getBtnWater   =     document.getElementById('btnWater'),
+            getBtnIgnore   =     document.getElementById('btnIgnore'),
+            getBtnTalkShit =     document.getElementById('btnTalkShit');
 
- //--------------setInterval functions for count down-------------
+ //--------------setInterval functions for count down---------------------------/
          //At set intervals, Hppiness decreases.
          setInterval(function(){
              if(alive == true){
@@ -153,7 +140,7 @@ If the pet is dead, then the ending events trigger.
              
          },intervalLife);
     
- //-----------------------button eventlisteners------------------------------------  
+ //-----------------------button eventlisteners------------------------------------/  
  
  //sound file //toggle audio
         sound.addEventListener("click",function(){
@@ -181,7 +168,7 @@ If the pet is dead, then the ending events trigger.
                         ctCurLife = ctCurLife + points;
                      }meterWidth();
                      
-                        //Check conditions and adjust graphics as appropriate.
+         //Check conditions and adjust graphics as appropriate.
                     checkDangerLife();
                     checkDangerHappiness();
                     checkDangerHunger();
@@ -221,7 +208,7 @@ If the pet is dead, then the ending events trigger.
                  }
              })
              //Clicking on a "Feed" button will restore life and hunger level to your pet.
-             getBtnClean.addEventListener("click",function(){
+             getBtnWater.addEventListener("click",function(){
                 if(alive == true){
                     if(ctCurHunger + points <= ctMaxHunger)
                        {
@@ -250,66 +237,69 @@ If the pet is dead, then the ending events trigger.
          });
          //Clicking on the "Ignore" and "Talk Shit"button will reduce life and happiness level to your pet.
 
-        //  getBtnIgnore.addEventListener("click",function(){
-        //     if(alive == true){
-        //         if(ctCurHappiness - points <= ctMaxHappiness)
-        //             {
-        //                ctCurHappiness = ctCurHappiness - points;
+         getBtnIgnore.addEventListener("click",function(){
+            if(alive == true){
+                if(ctCurHappiness - points <= ctMaxHappiness)
+                    {
+                       ctCurHappiness = ctCurHappiness - points;
                     
-        //                if(ctCurLife - points < ctMaxLife)
-        //                    {
-        //                        ctCurLife = ctCurLife - points;
-        //                    }
+                       if(ctCurLife - points < ctMaxLife)
+                           {
+                               ctCurLife = ctCurLife - points;
+                           }
                     
-        //                meterWidth();
+                       meterWidth();
                     
-        //                //Check conditions and adjust graphics as appropriate.
-        //                checkDangerLife();
-        //                checkDangerHappiness();
-        //                checkDangerHunger();
+                       //Check conditions and adjust graphics as appropriate.
+                       checkDangerLife();
+                       checkDangerHappiness();
+                       checkDangerHunger();
                     
-        //                if(dangerLife == false)
-        //                {okLife();}
-        //                if(dangerHappiness == false)
-        //                {okHappiness();}
-        //                if(dangerHunger== false)
-        //                {okHunger();}
-        //         }
-        //     }
-        //     getBtnTalkShit.addEventListener("click",function(){
-        //         getPetImg.src = "petImg/sayingHi.jpeg"
-        //         if(alive == true){
-        //             if(ctCurHappiness - points <= ctMaxHappiness)
-        //                 {
-        //                    ctCurHappiness = ctCurHappiness - points;
+                       if(dangerLife == false)
+                       {okLife();}
+                       if(dangerHappiness == false)
+                       {okHappiness();}
+                       if(dangerHunger== false)
+                       {okHunger();}
+                }
+            }
+         });
+            getBtnTalkShit.addEventListener("click",function(){
+                getPetImg.src = "petImg/sayingHi.jpeg"
+                if(alive == true){
+                    if(ctCurHappiness - points <= ctMaxHappiness)
+                        {
+                           ctCurHappiness = ctCurHappiness - points;
                         
-        //                    if(ctCurLife - points < ctMaxLife)
-        //                        {
-        //                            ctCurLife = ctCurLife - points;
-        //                        }
+                           if(ctCurLife - points < ctMaxLife)
+                               {
+                                   ctCurLife = ctCurLife - points;
+                               }
                         
-        //                    meterWidth();
+                           meterWidth();
                         
-        //                    //Check conditions and adjust graphics as appropriate.
-        //                    checkDangerLife();
-        //                    checkDangerHappiness();
-        //                    checkDangerHunger();
+                           //Check conditions and adjust graphics as appropriate.
+                           checkDangerLife();
+                           checkDangerHappiness();
+                           checkDangerHunger();
                         
-        //                    if(dangerLife == false)
-        //                    {okLife();}
-        //                    if(dangerHappiness == false)
-        //                    {okHappiness();}
-        //                    if(dangerHunger== false)
-        //                    {okHunger();}
-        //             }
-        //         }
-        // });
+                           if(dangerLife == false)
+                           {okLife();}
+                           if(dangerHappiness == false)
+                           {okHappiness();}
+                           if(dangerHunger== false)
+                           {okHunger();}
+                    }
+                }
+        });
          
          //Functions
          init()
+
          function init(){
              audioPlayer.src = "sound/gameplay.mp3"
              audioPlayer.volume = 0.05
+             meterWidth()
 
          }
          function meterWidth(){
@@ -318,7 +308,7 @@ If the pet is dead, then the ending events trigger.
                 getStyleHappiness.width = ctCurHappiness * widther + "px";	 
                 getStyleHunger.width = ctCurHunger * widther + "px";	 
          }
-         meterWidth()
+         
          
          function checkDangerHappiness(){
             if(ctCurHappiness < threshold)
@@ -366,17 +356,17 @@ If the pet is dead, then the ending events trigger.
          }
          
         function warnHappiness(){
-        //      getImg.innerHTML = imgSick;
+        
              getStyleHappiness.border = bdrStart + clrWarn;
          }
          
         function warnHunger(){
-        //      getImg.innerHTML = imgSick;
+        
              getStyleHunger.border = bdrStart + clrWarn;
         }
          
          function warnLife(){
-        //      getImg.innerHTML = imgSick;
+       
              getStyleLife.border = bdrStart + clrWarn;
           }
          
@@ -389,7 +379,7 @@ If the pet is dead, then the ending events trigger.
          }
          
          function okLife(){
-        //      getImg.innerHTML = ;
+        
              getStyleLife.border = bdrStart + clrDfltLife;
         }
          
@@ -404,12 +394,5 @@ If the pet is dead, then the ending events trigger.
             messageElement.style.color = "white"
          }//end of the game
          
-        // });
-        
-    //                 })();
-    //             })
-    //         })
-    //     })
-    // })()
-        
-        
+  
+     
