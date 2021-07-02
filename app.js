@@ -410,5 +410,47 @@ If the pet is dead/runaway, then the ending events trigger.
             messageElement.style.color = "white"
          }//end of the game
          //Sorry!!!!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
   
      

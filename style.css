@@ -27,6 +27,7 @@ html {
 }
 h1{
     font-size: xlarge;
+    font-family:cursive ;
     color: rgb(221, 113, 113) ;
 }
 
@@ -252,3 +253,4 @@ body.dark > div > #left-column{
     width: 70px;
     margin-bottom: 20px;
 }
+
