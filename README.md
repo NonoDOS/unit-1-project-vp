@@ -76,7 +76,7 @@ A Pet Stimulation game with basic functions such as feeding cleaning and playing
 -[@NonoDOS}(https://github.com/NonoDOS)
 
 ## Game Play
-### Story Line
+### Story
 
 Title : Virtual Pet By Nono D
 
@@ -84,10 +84,9 @@ Title : Virtual Pet By Nono D
 
 2)Are you ready to adopt the pet today?
 
-3)Choose the pet of your choice?
+3)Choose the pet of your choice?(Egg Scene)
 	(i) Dog
 	(ii) Cat
-    (iii)Fish
 
 Msg: which one would you like?
 
@@ -103,6 +102,3 @@ Msg: which one would you like?
 4. Talking shit/Displaining to your pet when you are busy and frustrated and ignoring him will lead to    his sad mood and eventually it will affect his heath and hence the Life Bar.
 5. Ready for your Virtual Pet!
 6. Bring it on!
-
-
-	
