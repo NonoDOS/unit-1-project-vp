@@ -158,6 +158,7 @@ If the pet is dead, then the ending events trigger.
   
  //Clicking on a "Play" button will restore life and happiness level to your pet.
          getBtnPlay.addEventListener("click",function(){
+            getPetImg.src = "petImg/playingPup.jpeg"
              if(alive == true){
                  if(ctCurHappiness + points <= ctMaxHappiness)
                      {
@@ -184,6 +185,7 @@ If the pet is dead, then the ending events trigger.
                   
          //Clicking on a "Feed" button will restore life and hunger level to your pet.
          getBtnFeed.addEventListener("click",function(){
+            getPetImg.src = "petImg/DogFeed.jpeg"
              if(alive == true){
                  if(ctCurHunger + points <= ctMaxHunger){
                         ctCurHunger = ctCurHunger + points;
@@ -208,11 +210,12 @@ If the pet is dead, then the ending events trigger.
                  }
              })
              //Clicking on a "Feed" button will restore life and hunger level to your pet.
-             getBtnWater.addEventListener("click",function(){
+             getBtnClean.addEventListener("click",function(){
+                getPetImg.src = "petImg/cleaningPup.jpeg"
                 if(alive == true){
-                    if(ctCurHunger + points <= ctMaxHunger)
+                    if(ctCurHappiness + points <= ctMaxHappiness)
                        {
-                           ctCurHunger = ctCurHunger + points;
+                           ctCurHappiness = ctCurHappiness + points;
                         
                            if(ctCurLife + points < ctMaxLife)
                                {
@@ -238,6 +241,7 @@ If the pet is dead, then the ending events trigger.
          //Clicking on the "Ignore" and "Talk Shit"button will reduce life and happiness level to your pet.
 
          getBtnIgnore.addEventListener("click",function(){
+            getPetImg.src = "petImg/sadpup1.jpeg"
             if(alive == true){
                 if(ctCurHappiness - points <= ctMaxHappiness)
                     {
@@ -265,7 +269,7 @@ If the pet is dead, then the ending events trigger.
             }
          });
             getBtnTalkShit.addEventListener("click",function(){
-                getPetImg.src = "petImg/sayingHi.jpeg"
+                getPetImg.src = "petImg/displine.jpeg"
                 if(alive == true){
                     if(ctCurHappiness - points <= ctMaxHappiness)
                         {
@@ -384,7 +388,7 @@ If the pet is dead, then the ending events trigger.
         }
          
          function ending(){
-            getPetImg.src = "petImg/deadpup.jpeg"
+            getPetImg.src = "petImg/runningawaypup.jpeg"
             audioPlayer.src = "sound/Heartbeat.mp3"
             audioPlayer.play()
             setTimeout(function(){
