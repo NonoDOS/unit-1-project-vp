@@ -175,7 +175,7 @@ body.dark > div > #left-column{
     background-color: #088A85;
 }
 
-#btnWater{
+#btnClean{
     background-color: #f214e3; /* limegreen */
     color: #F2F2F2; /* near white */
     border-radius: 50px;
@@ -234,6 +234,7 @@ body.dark > div > #left-column{
 #BtnGameRule{
     background-color:cornflowerblue;
     text-align: center;
+    border-radius: 10px;
     font-size: xlarge;
     height: 50px;
     width: 70px;
@@ -242,6 +243,7 @@ body.dark > div > #left-column{
 #BtnContent{
     background-color:cornflowerblue;
     text-align: center;
+    border-radius: 10px;
     font-size: xlarge;
     height: 50px;
     width: 70px;
@@ -250,15 +252,10 @@ body.dark > div > #left-column{
 #BtnGamePlay{
     background-color:cornflowerblue;
     text-align: center;
+    border-radius: 10px;
     font-size: xlarge;
     height: 50px;
     width: 70px;
     margin-bottom: 5px;
 }
 
-#feedback{
-    margin-top: 67px;
-    padding: 3px 0 4px 0;
-    width: 380px;
-    float: none;
-}

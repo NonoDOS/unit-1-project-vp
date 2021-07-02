@@ -67,7 +67,7 @@
                  //Get buttons for click events
             getBtnPlay     =     document.getElementById('btnPlay'),
             getBtnFeed     =     document.getElementById('btnFeed'),
-            getBtnWater   =     document.getElementById('btnWater'),
+            getBtnClean   =     document.getElementById('btnClean'),
             getBtnIgnore   =     document.getElementById('btnIgnore'),
             getBtnTalkShit =     document.getElementById('btnTalkShit');
 
@@ -158,7 +158,7 @@ If the pet is dead, then the ending events trigger.
   
  //Clicking on a "Play" button will restore life and happiness level to your pet.
          getBtnPlay.addEventListener("click",function(){
-            getPetImg.src = "petImg/playingPup.jpeg"
+             getPetImg.src = "petImg/playingPup.png"
              if(alive == true){
                  if(ctCurHappiness + points <= ctMaxHappiness)
                      {
@@ -185,7 +185,7 @@ If the pet is dead, then the ending events trigger.
                   
          //Clicking on a "Feed" button will restore life and hunger level to your pet.
          getBtnFeed.addEventListener("click",function(){
-            getPetImg.src = "petImg/DogFeed.jpeg"
+            getPetImg.src = "petImg/DogFeed.jpg"
              if(alive == true){
                  if(ctCurHunger + points <= ctMaxHunger){
                         ctCurHunger = ctCurHunger + points;
@@ -238,7 +238,7 @@ If the pet is dead, then the ending events trigger.
                     }
                 }
          });
-         //Clicking on the "Ignore" and "Talk Shit"button will reduce life and happiness level to your pet.
+         //Clicking on the "Ignore" and "Displine"button will reduce life and happiness level to your pet.
 
          getBtnIgnore.addEventListener("click",function(){
             getPetImg.src = "petImg/sadpup1.jpeg"
@@ -269,7 +269,7 @@ If the pet is dead, then the ending events trigger.
             }
          });
             getBtnTalkShit.addEventListener("click",function(){
-                getPetImg.src = "petImg/displine.jpeg"
+                 getPetImg.src = "petImg/displine.jpeg"
                 if(alive == true){
                     if(ctCurHappiness - points <= ctMaxHappiness)
                         {
@@ -388,7 +388,7 @@ If the pet is dead, then the ending events trigger.
         }
          
          function ending(){
-            getPetImg.src = "petImg/runningawaypup.jpeg"
+            getPetImg.src = "petImg/runningawaypup.png"
             audioPlayer.src = "sound/Heartbeat.mp3"
             audioPlayer.play()
             setTimeout(function(){

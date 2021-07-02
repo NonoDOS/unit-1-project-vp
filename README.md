@@ -53,14 +53,20 @@ A Pet Stimulation game with basic functions such as feeding cleaning and playing
 
 ## References 
 	1) lectures Notes and recordings from SEI
+    2) [css zen garden](http://www.csszengarden.com/)
+    3) [mdn](https://developer.mozilla.org/en-US/docs/Web/javascript)
+    4[bootstrap](https://getbootstrap.com/docs/5.0/layout/columns/)
 	
 ## Credits
 
    [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
  - [Awesome README](https://github.com/matiassingers/awesome-readme)
  - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
- - [img ]
-
+ - [saddogimg](https://beagleplanet.org/a-puppys-life-inside-the-cone-of-shame/)
+ - [runningawaypup](https://www.clipartmax.com/middle/m2i8H7G6N4m2Z5Z5_dog-dog-running-away-clipart/)
+ - [disciplinedogimg](https://www.fotosearch.com/illustration/bad-dog.html)
+ - [galaxy,nightimg](http://www.wallpapers-full-hd.com/backgrounds/galaxy-gory-night-sky.jpg)
+ - [other dog pics](https://images.clipartof.com/)
 
 ## Authors
 -[@NonoDOS}(https://github.com/NonoDOS)
