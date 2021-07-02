@@ -46,8 +46,7 @@ header{
      display: flex;
      flex-direction: column;
      align-items: center;
-     background: url("https://www.wallpaperflare.com/static/302/504/847/video-games-final-fantasy-xiii-forest-screen-shot-wallpaper.jpg");
-     background-attachment: fixed; 
+     background: url("http://www.wallpapers-full-hd.com/backgrounds/galaxy-gory-night-sky.jpg");
      background-position: center;
      background-repeat: no-repeat;
      background-size: 1500px 900px;
@@ -141,8 +140,11 @@ body.dark > div > #left-column{
 #btnPlay{
       background-color: rgb(38, 0, 255); 
       color: #F2F2F2; /* near white */
-      border-radius: 5px;
-      height: 20px;
+      border-radius: 50px;
+      text-align: center;
+      font-size: xlarge;
+      height: 50px;
+      width: 100px;
       margin-bottom: 5px;
 }
     
@@ -156,10 +158,12 @@ body.dark > div > #left-column{
 #btnFeed{
     background-color: #0b8a06; 
     color: #F2F2F2; /* near white */
-    border-radius: 5px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: xlarge;
+    height: 50px;
+    width: 100px;
     margin-bottom: 5px;
-    
-    height: 20px;
 }
     
 #btnFeed:hover{
@@ -173,8 +177,11 @@ body.dark > div > #left-column{
 #btnClean{
     background-color: #f214e3; /* limegreen */
     color: #F2F2F2; /* near white */
-    border-radius: 5px;
-    height: 20px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: xlarge;
+    height: 50px;
+    width: 100px;
     margin-bottom: 5px;
 }
   
@@ -188,8 +195,11 @@ body.dark > div > #left-column{
 #btnIgnore{
     background-color: #5d07a4; 
     color: #F2F2F2; /* near white */
-    border-radius: 5px;
-    height: 20px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: xlarge;
+    height: 50px;
+    width: 100px;
     margin-bottom: 5px;
 }
     
@@ -204,8 +214,10 @@ body.dark > div > #left-column{
 #btnTalkShit{
     background-color: #f0186b; 
     color: #F2F2F2; /* near white */
-    border-radius: 5px;
-    height: 20px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: xlarge;
+    height: 50px;
     width: 100px;
     margin-bottom: 5px;
 }
@@ -216,6 +228,31 @@ body.dark > div > #left-column{
     
 #btnTalkShit:active{
     background-color: #dd1f3f;
+}
+
+#BtnGameRule{
+    background-color:cornflowerblue;
+    text-align: center;
+    font-size: xlarge;
+    height: 50px;
+    width: 70px;
+    margin-bottom: 5px;
+}
+#BtnContent{
+    background-color:cornflowerblue;
+    text-align: center;
+    font-size: xlarge;
+    height: 50px;
+    width: 70px;
+    margin-bottom: 5px;
+}
+#BtnGamePlay{
+    background-color:cornflowerblue;
+    text-align: center;
+    font-size: xlarge;
+    height: 50px;
+    width: 70px;
+    margin-bottom: 5px;
 }
 
 #feedback{
