@@ -15,9 +15,7 @@ html {
       font-size: 62.5%;
   }
   body{
-    display : grid; 
-    justify-content: center;
-    align-items: center;
+    
     background-color: rgba(23, 53, 23, 0.945);
     background: url("https://www.wallpaperflare.com/static/302/504/847/video-games-final-fantasy-xiii-forest-screen-shot-wallpaper.jpg");
     background-attachment: fixed;
@@ -32,6 +30,8 @@ html {
     text-align: center;
     display: flex; 
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #small-image{

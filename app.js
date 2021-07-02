@@ -1,12 +1,13 @@
+ 
  //Pet's stats are Life, Happiness, and Hunger
 
     
 //--------------------------------------constants-------------------------------
 
 //--------------------------------------Variables--------------------------------------
-    var  intervalLife =      1000,
-         intervalHappiness = 2000,
-         intervalHunger =    3000,
+    let  intervalLife =      1000,
+         intervalHappiness = 3000,
+         intervalHunger =    2000,
 
          ctMaxLife =        50,
          ctMaxHappiness =   50,
@@ -16,26 +17,28 @@
          ctCurHappiness =  ctMaxHappiness,
          ctCurHunger=      ctMaxHunger,
 
-
+         isSoundOn = false
          
 //When conditions are dangerous, the coresponding stat bars will turn red (warning)
-    alive =		        true,
-    dangerLife =       false,
-    dangerHappiness =  false,
-    dangerHunger =     false,
-             
-//--------------------------------------catchedElements--------------------------------------
+       
+   let alive = true
+   let dangerLife = false
+   let dangerHappiness = false
+   let dangerHunger = false
+//--------------------------------------catchedElements--------------------------------------/
                  //Get meters to change width and border color
      const messageElement= document.getElementById('message'),
+           sound = document.getElementById('sound'),
+           audioPlayer = new Audio(),
 
-    getPetImg = document.getElementById('small-image'),
-    getMeterLife =      document.getElementById('meterLife'),
-    getMeterHappiness = document.getElementById('meterHappiness'),
+     getPetImg = document.getElementById('small-image'),
+     getMeterLife =      document.getElementById('meterLife'),
+     getMeterHappiness = document.getElementById('meterHappiness'),
      getMeterHunger =    document.getElementById('meterHunger'),
              
-             getStyleLife =        getMeterLife.style,
-             getStyleHappiness =   getMeterHappiness.style,
-             getStyleHunger =      getMeterHunger.style,
+    getStyleLife =        getMeterLife.style,
+    getStyleHappiness =   getMeterHappiness.style,
+    getStyleHunger =      getMeterHunger.style,
              
 
 //When happiness/hunger fall below threshold, pet starts losing Life Bar
@@ -47,17 +50,18 @@
              clrDfltLife =      "#0b420b",  //green
              clrDfltHappiness = "#ec8804",  //orange
              clrDfltHunger =    "#216ed3",  //blue
+             bdrStart =		"1px solid ",
                  
              colorCurLife =      clrDfltLife,
              colorCurHappiness = clrDfltHappiness,
              c0lorCurHunger =    clrDfltHunger,
              
              clrWarn = " #FF0040", //red
-         
+        
                  //Get buttons for click events
-             getBtnPlay     =     document.getElementById('btnPlay'),
-             getBtnFeed     =     document.getElementById('btnFeed'),
-             getBtnClean    =     document.getElementById('btnClean')
+            getBtnPlay     =     document.getElementById('btnPlay'),
+            getBtnFeed     =     document.getElementById('btnFeed'),
+            getBtnClean    =     document.getElementById('btnClean')
             //  getBtnIgnore   =     document.getElementById('btnIgnore'),
             //  getBtnTalkShit =     document.getElementById('btnTalkShit');
              
@@ -72,7 +76,8 @@
         
         //  getStyleFb.display = 'none';
         //  meterWidth();
-         
+    
+        
 
  //--------------setInterval functions for count down-------------
          //At set intervals, Hppiness decreases.
@@ -138,12 +143,24 @@ If the pet is dead, then the ending events trigger.
              
          if(alive == false)
             {
-                terminate();
+                ending();
             }
              
          },intervalLife);
     
- //-----------------------button eventlisteners------------------------------------   
+ //-----------------------button eventlisteners------------------------------------  
+ 
+ //sound file //toggle audio
+        sound.addEventListener("click",function(){
+            if(isSoundOn){
+            isSoundOn =false
+            audioPlayer.pause()
+            }else{
+                isSoundOn = true
+                audioPlayer.play()
+            }
+        })
+  
          //Clicking on a "Play" button will restore life and happiness level to your pet.
          getBtnPlay.addEventListener("click",function(){
              if(alive == true){
@@ -168,16 +185,15 @@ If the pet is dead, then the ending events trigger.
                     if(dangerHunger== false)
                     {okHunger();}
                     }
-                
+         })
+                  
          //Clicking on a "Feed" button will restore life and hunger level to your pet.
          getBtnFeed.addEventListener("click",function(){
              if(alive == true){
-                 if(ctCurHunger + points <= ctMaxHunger)
-                    {
+                 if(ctCurHunger + points <= ctMaxHunger){
                         ctCurHunger = ctCurHunger + points;
-                     
-                        if(ctCurLife + points < ctMaxLife)
-                            {
+                 }
+                            if(ctCurLife + points < ctMaxLife){
                                 ctCurLife = ctCurLife + points;
                             }
                      
@@ -195,7 +211,7 @@ If the pet is dead, then the ending events trigger.
                         if(dangerHunger == false)
                             {okHunger();}
                  }
-             }
+             })
              //Clicking on a "Feed" button will restore life and hunger level to your pet.
              getBtnClean.addEventListener("click",function(){
                 if(alive == true){
@@ -280,38 +296,42 @@ If the pet is dead, then the ending events trigger.
         //             }
         //         }
         // });
-        
-         
          
          //Functions
-         
+         init()
+         function init(){
+             audioPlayer.src = "sound/gameplay.mp3"
+             audioPlayer.volume = 0.05
+
+         }
          function meterWidth(){
              //This updates the width of the meters.
-                getStyleLife.width = ctCurLife * widther + "px";	 
-                 getStyleHappiness.width = ctCurHappiness * widther + "px";	 
-                 getStyleHunger.width = ctCurHunger * widther + "px";	 
+                getStyleLife.width = ctCurLife * widther + "px";
+                getStyleHappiness.width = ctCurHappiness * widther + "px";	 
+                getStyleHunger.width = ctCurHunger * widther + "px";	 
          }
+         meterWidth()
          
          function checkDangerHappiness(){
-                     if(ctCurHappiness < threshold)
-                        {
-                            dangerHappiness = true;
-                        }
-                     else
-                        {
-                            dangerHappiness = false;	
-                        }
+            if(ctCurHappiness < threshold)
+            {
+                dangerHappiness = true;
+             }
+            else
+             {
+                 dangerHappiness = false;	
+             }
          }
          
          function checkDangerHunger(){
-                     if(ctCurHunger < threshold)
-                        {
-                            dangerHunger = true;
-                        }
-                     else
-                        {
-                            dangerHunger= false;	
-                        }
+             if(ctCurHunger < threshold)
+                {
+                     dangerHunger = true;
+                }
+            else
+                {
+                     dangerHunger= false;	
+                }
          }
          
          function checkDangerLife(){
@@ -337,20 +357,20 @@ If the pet is dead, then the ending events trigger.
               ctCurLife = ctCurLife - points;        
          }
          
-        //  function warnHappiness(){
+        function warnHappiness(){
         //      getImg.innerHTML = imgSick;
-        //      getStyleHappiness.border = bdrStart + clrWarn;
-        //  }
+             getStyleHappiness.border = bdrStart + clrWarn;
+         }
          
-        //  function warnHunger){
+        function warnHunger(){
         //      getImg.innerHTML = imgSick;
-        //      getStyleHunger.border = bdrStart + clrWarn;
-        //  }
+             getStyleHunger.border = bdrStart + clrWarn;
+        }
          
-        //  function warnLife(){
+         function warnLife(){
         //      getImg.innerHTML = imgSick;
-        //      getStyleLife.border = bdrStart + clrWarn;
-        //  }
+             getStyleLife.border = bdrStart + clrWarn;
+          }
          
          function okHappiness(){
              getStyleHappiness.border = bdrStart + clrDfltHunger;
@@ -360,20 +380,28 @@ If the pet is dead, then the ending events trigger.
              getStyleHunger.border = bdrStart + clrDfltHunger;
          }
          
-        //  function okLife(){
+         function okLife(){
         //      getImg.innerHTML = ;
-        //      getStyleLife.border = bdrStart + clrDfltH;
-        //  }
+             getStyleLife.border = bdrStart + clrDfltLife;
+        }
          
          function ending(){
-            //  getImg.innerHTML = ;
-            //  getStyleFb.display = 'block';
-         }
+            getPetImg.src = "petImg/deadpup.jpeg"
+            audioPlayer.src = "sound/Heartbeat.mp3"
+            audioPlayer.play()
+            setTimeout(function(){
+                audioPlayer.pause()
+            }, 5000)
+            messageElement.innerHTML = "You lose!!!"
+            messageElement.style.color = "white"
+         }//end of the game
          
         // });
         
-                    })();
-                })
-            })
-        })
-    })()
+    //                 })();
+    //             })
+    //         })
+    //     })
+    // })()
+        
+        
